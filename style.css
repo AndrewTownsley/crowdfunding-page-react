@@ -15,6 +15,8 @@ html {
   --black-txt: hsl(0, 0%, 0%);
   --light-txt: hsl(0, 0%, 48%);
   --border-light: hsl(0, 0%, 92%);
+  --border-rad: 8px;
+  --border-line: 2px solid var(--border-light);
 }
 
 body {
@@ -34,7 +36,7 @@ h1 {
 h3 {
   font-size: 1.125rem;
   font-weight: 700;
-  padding-bottom: 1.5rem;
+  padding-bottom: 24px;
 }
 
 h4 {
@@ -45,7 +47,7 @@ h4 {
 h5 {
   color: var(--main-btn);
   font-size: 00.75rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
 .btn {
@@ -60,6 +62,30 @@ h5 {
   padding: 1.4rem;
   border-radius: 8px;
   background-color: #fff;
+}
+
+/* ----------------------------------MOBILE NAV  */
+
+.mobile-nav {
+  display: none;
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-rad);
+  margin: 24px;
+}
+
+.mobile-nav a {
+  padding: 1rem;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black-txt);
+  text-decoration: none;
+}
+
+.mobile-nav a:nth-child(2) {
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 /* ---------------------------------------HEADER / NAV */
@@ -77,7 +103,7 @@ h5 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 1.5rem;
+  padding: 2rem 24px;
 }
 
 .nav-links {
@@ -101,7 +127,7 @@ h5 {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: -3rem 1.5rem;
+  margin: -3rem 24px;
   padding: 0;
   border-radius: 8px;
   background-color: #fff;
@@ -140,7 +166,7 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 4.5rem 1.5rem 1.5rem 1.5rem;
+  margin: 4.5rem 24px 24px 24px;
   padding: 2rem 0;
   border-radius: 8px;
   background-color: #fff;
@@ -148,13 +174,13 @@ h5 {
 }
 
 .data-text {
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
 .data-text:nth-of-type(2) {
   border-top: 1px solid hsl(0, 0%, 90%);
   border-bottom: 1px solid hsl(0, 0%, 90%);
-  padding: 1.5rem 0;
+  padding: 24px 0;
 }
 
 .data-text h2 {
@@ -179,24 +205,24 @@ h5 {
 .about {
   display: flex;
   flex-direction: column;
-  margin: 1.5rem;
-  padding: 1.5rem;
+  margin: 24px;
+  padding: 24px;
   border-radius: 8px;
   background-color: #fff;
 }
 
 .about p {
-  padding-bottom: 1.5rem;
+  padding-bottom: 24px;
 }
 
 .product-card {
   border: 2px solid var(--border-light);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 24px;
+  margin-bottom: 24px;
 }
 
 .product-card span {
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
 .reward-btn {
@@ -204,5 +230,103 @@ h5 {
   padding: 0.75rem;
   width: 150px;
   font-size: 14px;
+  font-weight: 700;
+}
+
+.pledge-modal {
+  margin: 0 24px;
+}
+
+.pledge-modal header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.pledge-modal header h3 {
+  padding-bottom: 0;
+}
+
+.pledge-select {
+  border: var(--border-line);
+  border-radius: var(--border-rad);
+  margin: 24px 0;
+  padding: 24px;
+}
+
+.pledge-select label {
+  display: flex;
+}
+/* ----------------------------------RADIO-CIRCLE  */
+
+input[type="radio"] {
+  display: none;
+}
+
+.selection.active.radio-circle {
+  border-color: hsl(176, 50%, 47%);
+}
+
+.pledge-select label:hover .radio-circle {
+  border-color: hsl(176, 50%, 47%);
+}
+
+.radio-circle {
+  position: relative;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 90%);
+  margin-right: 1rem;
+  flex-shrink: 0;
+  transition: border-color 0.25s ease;
+}
+
+.radio-circle::after {
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: hsl(176, 50%, 47%);
+  transform: scale(0);
+  transition: transform 0.25s ease;
+}
+
+.selection.active .radio-circle::after {
+  transform: scale(1);
+}
+/* --------------------------------------------------- */
+.pledge-pop-out {
+  /* display: none; */
+  border-top: var(--border-line);
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  text-align: center;
+}
+
+.pledge-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.pledge-input input {
+  padding: 0.75rem 1rem;
+  margin-right: 1rem;
+  border-radius: 5rem;
+  width: 100px;
+  border: var(--border-line);
+  font-weight: 700;
+}
+
+.continue-btn {
+  background-color: var(--main-btn);
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
   font-weight: 700;
 }
