@@ -234,9 +234,31 @@ h5 {
   font-weight: 700;
 }
 
+/* ------------------------------------  Overlay / Modal */
+
+.overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  pointer-events: all;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  /* opacity: 0; */
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
 .pledge-modal {
   margin: 0 24px;
+  position: fixed;
+  overflow-y: scroll;
+  top: 18vh;
+  height: 80vh;
+  pointer-events: all;
+  z-index: 3;
 }
+
+/* -------------------------------Pledge / Pledge-Input  */
 
 .pledge-modal header {
   display: flex;
@@ -304,7 +326,7 @@ input[type="radio"] {
 }
 /* --------------------------------------------------- */
 .pledge-pop-out {
-  /* display: none; */
+  display: none;
   position: relative;
   border-top: var(--border-line);
   padding: 1.5rem 1.5rem 0 1.5rem;
@@ -331,17 +353,11 @@ input[type="radio"] {
 }
 
 .pledge-input::before {
-  /* position: absolute;
-  top: 20px;
-  left: 1.25rem;
-  content: "$";
-  font: 500 1rem/1 "Commissioner", sans-serif;
-  color: hsl(0, 0%, 50%); */
   position: absolute;
   top: 21px;
   left: -1.25rem;
   content: "$";
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.85rem;
   color: var(--light-txt);
 }
