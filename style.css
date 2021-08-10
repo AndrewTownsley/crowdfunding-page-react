@@ -16,7 +16,7 @@ html {
   --light-txt: hsl(0, 0%, 48%);
   --border-light: hsl(0, 0%, 92%);
   --border-rad: 8px;
-  --border-line: 2px solid var(--border-light);
+  --border-line: 1px solid var(--border-light);
 }
 
 body {
@@ -305,6 +305,7 @@ input[type="radio"] {
 /* --------------------------------------------------- */
 .pledge-pop-out {
   /* display: none; */
+  position: relative;
   border-top: var(--border-line);
   padding: 1.5rem 1.5rem 0 1.5rem;
   margin-top: 1.5rem;
@@ -314,34 +315,41 @@ input[type="radio"] {
 .pledge-input {
   position: relative;
   display: flex;
+  width: 100%;
   justify-content: center;
   margin-top: 1.5rem;
 }
 
 .pledge-input input {
-  text-align: center;
-  padding: 0.75rem 1rem;
+  /* text-align: center; */
+  padding: 1rem 1.25rem;
   margin-right: 1rem;
   border-radius: 5rem;
-  width: 100px;
+  width: 120px;
   border: var(--border-line);
-  font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.85rem;
 }
 
 .pledge-input::before {
-  position: absolute;
-  top: 16px;
-  left: -0.35rem;
+  /* position: absolute;
+  top: 20px;
+  left: 1.25rem;
   content: "$";
-  font-weight: 700;
-  font-size: 1rem;
+  font: 500 1rem/1 "Commissioner", sans-serif;
+  color: hsl(0, 0%, 50%); */
+  position: absolute;
+  top: 21px;
+  left: -1.25rem;
+  content: "$";
+  font-weight: 600;
+  font-size: 0.85rem;
   color: var(--light-txt);
 }
 
 .continue-btn {
   background-color: var(--main-btn);
-  padding: 0.75rem 1rem;
+  padding: 0.1rem 1rem;
+  flex-grow: 0;
   font-size: 0.75rem;
   font-weight: 700;
 }
