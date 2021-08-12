@@ -14,6 +14,5 @@ const closeMobileMenu = () => {
 }
 
 
-
 burgerBtn.addEventListener('click', toggleMobileMenu);
 overlay.addEventListener('click', closeMobileMenu);
