@@ -84,6 +84,7 @@ h5 {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 24px;
+  transition: 1000ms ease-in-out;
 }
 
 .nav-links {
@@ -94,7 +95,7 @@ h5 {
   border: none;
   background-color: transparent;
   cursor: pointer;
-  transition: 1.5s ease-in-out;
+  /* transition: 1.5s ease-in-out; */
   z-index: 4;
 }
 
@@ -107,7 +108,6 @@ h5 {
 .burger-menu.inActive {
   opacity: 0;
   transform: scale(0);
-  transition: 1.5s ease-in-out;
 }
 
 .burger-menu img {
@@ -118,26 +118,25 @@ h5 {
 .close-mobile-x {
   background-color: transparent;
   border: none;
-  /* height: 20px;
-  width: 21px; */
   display: none;
   opacity: 0;
   z-index: 2;
-  transition: 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+  transform: scale(1);
 }
 
 .close-mobile-x.active {
   opacity: 1;
   display: block;
   transform: scale(1);
-  transition: 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
 }
 
 .close-mobile-x.inActive {
   opacity: 0;
   display: none;
   transform: scale(0);
-  transition: 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
 }
 
 /* ------------------------------------PRODUCT - HERO */
@@ -273,6 +272,11 @@ h5 {
   z-index: 1;
 }
 
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
 .pledge-modal {
   opacity: 0;
   margin: 0 24px;
@@ -280,8 +284,13 @@ h5 {
   overflow-y: scroll;
   top: 18vh;
   height: 80vh;
-  pointer-events: all;
+  pointer-events: none;
   z-index: 3;
+}
+
+.pledge-modal.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .thank-modal {
@@ -291,6 +300,7 @@ h5 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
   top: 7rem;
   z-index: 3;
   margin: 0 24px;
@@ -343,11 +353,6 @@ h5 {
   display: flex;
   pointer-events: all;
   z-index: 4;
-}
-
-.overlay.active {
-  opacity: 1;
-  pointer-events: all;
 }
 
 .mobile-nav a:nth-child(2) {

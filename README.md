@@ -16,10 +16,11 @@
 
 1.  Menu Button
 
-    - onClick opens the menu modal
-    - Click outside the modal closes the menu
-    - Hamburger Icon transitions to X icon onClick.
-    - Don't forget transitions and hover/focus states
+    <!-- - onClick opens the menu modal -->
+    <!-- - Click outside the modal closes the menu -->
+    <!-- - Hamburger Icon transitions to X icon onClick. -->
+
+    - **_ Don't forget transitions and hover/focus states _**
 
 2.  Back this Project
 
