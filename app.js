@@ -1,23 +1,23 @@
-const burgerBtn = document.getElementById("burgerBtn");
 const mobileNav = document.getElementById("mobileNav");
 const overlay = document.getElementById("overlay");
-const closeX = document.getElementById("closeX");
+const openModal = document.getElementById("burgerBtn");
+const clodeMobile = document.getElementById("closeX");
 
 // Toggle Mobile Menu
-const toggleMobileMenu = () => {
+const openMobileMenu = () => {
     mobileNav.classList.toggle('active');
     overlay.classList.toggle('active');
-    burgerBtn.classList.toggle('active')
-    closeX.classList.toggle('active')
+    openMobile.classList.toggle('inActive')
+    closeMobile.classList.toggle('active')
 }
 
 const closeMobileMenu = () => {
     mobileNav.classList.toggle('active');
     overlay.classList.toggle('active');
-    burgerBtn.classList.toggle('active')
-    closeX.classList.toggle('active')
+    openMobile.classList.toggle('active')
+    closeMobile.classList.toggle('inActive')
 }
 
-closeX.addEventListener('click', closeMobileMenu);
-burgerBtn.addEventListener('click', toggleMobileMenu);
+closeMobile.addEventListener('click', closeMobileMenu);
+openMobile.addEventListener('click', openMobileMenu);
 overlay.addEventListener('click', closeMobileMenu);
