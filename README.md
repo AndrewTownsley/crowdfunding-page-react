@@ -24,7 +24,8 @@
 
 2.  Back this Project
 
-    - onClick opens the pledge-modal
+    <!-- - onClick opens the pledge-modal -->
+
     - selecting the Radio-Button opens the pledge pop-out, and fills in the radio button circle.
     - the border of the div that has been selected changes color.
 

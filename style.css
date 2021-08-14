@@ -402,7 +402,7 @@ input[type="radio"] {
   display: none;
 }
 
-.selection.active.radio-circle {
+.pledge-select.active.radio-circle {
   border-color: hsl(176, 50%, 47%);
 }
 
