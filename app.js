@@ -5,7 +5,7 @@ const closeMobile = document.getElementById("closeMobile");
 const projectBtn = document.getElementById("projectBtn");
 const pledgeModal = document.getElementById("pledgeModal");
 const closePledgeModal = document.getElementById("closePledgeModal");
-const pledgeSelects = document.querySelectorAll(".pledge-select input");
+const pledgeSelects= document.querySelectorAll(".pledge-select");
 console.log(pledgeSelects);
 const radioLabel = document.getElementsByClassName("radio-label");
 const radioCircle = document.getElementById("radioCircle");
@@ -27,53 +27,36 @@ const togglePledgeModal = () => {
 }
 
 // Clear Pledge Selection
+// const clearPledge = () => {
+//     console.log("clearPledge Called");
+//     const currentPledge = document.querySelector('.pledge-select.active');
+//     if(currentPledge) {
+//         currentPledge.classList.remove('active');
+//     }
+// }
 // The goal of this funciton is to clear the active classes from the selected pledge-div, clear the pledge input back to zero. 
-const clearPledge = () => {
-    const currentPledge = document.querySelector(".pledge-select.active");
-    if(currentPledge) {
-        // Declare radio variable
-        const radio = document.querySelector('.pledge-select.active input')
-        // Declare pledge-pop-out variable
-        const pledge = document.querySelector('.pledge-select .pledge-pop-out');
-        console.log(pledge);
-        // Declare pledge-input-value variable
-        const pledgeInput = document.querySelector('.pledge-select.active .pledge-pop-out input')
-        // Remove active class from currentPledge
-        currentPledge.classList.remove('.active');
-        // Remove checked from radio input
-        radio.checked = false;
-        // Hide pledge pop-out
-        pledge.style.maxHeight = 0;
-        // setTimeout(() => {
 
-        //     pledgeInput.parentElement.classList.remove('error');
-        //     pledgeInput.value = "";
-        // }, 500)
+
+const selectPledge = (e) => {
+    if(e.target != e.currentTarget) {
+        const currentPledge = document.querySelector('.pledge-select.active');
+        if(currentPledge) {
+            currentPledge.classList.remove('active');
+        }
+        const radio = e.target;
+        console.log(radio);
+        console.log(radio.parentElement.parentElement);
+        radio.parentElement.parentElement.classList.toggle('active');
     }
-}
-
-const selectPledge = (select) => {
+    e.stopPropagation;
     // Select the parent of the pledge select radio input
-    const pledgeParent = select.parentElement;
     // Toggle active class on this element
-    pledgeParent.classList.toggle('active');
     // open pledge-pop-out
-    const pledge = document.getElementsByClassName('.pledge-pop-out');
     // radio input checked === true;
-    select.checked = true;
-    setTimeout(() => pledgeParent.scrollIntoView({ behavior: "smooth"}), 500);
 }
 
-// Pledge Select -- radio button --
-pledgeSelects.forEach(pledge => {
-    pledge.addEventListener('change', 
-    clearPledge(),
-    selectPledge(pledge))
-})
 
-
-
-
+pledgeModal.addEventListener('click', selectPledge, false); 
 closePledgeModal.addEventListener('click', togglePledgeModal);
 projectBtn.addEventListener('click', togglePledgeModal);
 overlay.addEventListener('click', togglePledgeModal);

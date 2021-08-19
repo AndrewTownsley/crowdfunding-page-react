@@ -393,6 +393,14 @@ h5 {
   padding: 24px;
 }
 
+.pledge-select.active {
+  border: 1px solid var(--main-btn);
+}
+
+.pledge-select.active .details {
+  color: var(--main-btn);
+}
+
 .pledge-select label {
   display: flex;
 }
@@ -436,7 +444,7 @@ input[type="radio"] {
   transition: transform 0.25s ease;
 }
 
-.selection.active .radio-circle::after {
+.pledge-select.active .radio-circle::after {
   transform: scale(1);
 }
 /* --------------------------------------------------- */
@@ -458,7 +466,6 @@ input[type="radio"] {
 }
 
 .pledge-input input {
-  /* text-align: center; */
   padding: 1rem 1.25rem;
   margin-right: 1rem;
   border-radius: 5rem;
