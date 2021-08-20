@@ -23,11 +23,12 @@
     - **_ Don't forget transitions and hover/focus states _**
 
 2.  Back this Project
+    <!--
+        <!-- - onClick opens the pledge-modal -->
+    <!--
+        <!-- - selecting the Radio-Button opens the pledge pop-out, and fills in the radio button circle. -->
 
-    <!-- - onClick opens the pledge-modal -->
-
-    - selecting the Radio-Button opens the pledge pop-out, and fills in the radio button circle.
-    - the border of the div that has been selected changes color.
+        <!-- the border of the div that has been selected changes color -->
 
 3.  Enter your Pledge
 
