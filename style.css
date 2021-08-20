@@ -57,7 +57,7 @@ h5 {
   color: var(--card-bg);
   font-weight: 700;
   font-size: 0.75rem;
-  padding: 0.85rem 2rem;
+  padding: 0.75rem 1rem;
 }
 
 .card {
@@ -447,30 +447,32 @@ input[type="radio"] {
 .pledge-select.active .radio-circle::after {
   transform: scale(1);
 }
-/* --------------------------------------------------- */
-.pledge-pop-out {
+/* // --------------------------------------------------- */
+
+/* .pledge-pop-out {
   /* display: none; */
+  /* position: relative;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  /* align-items: center; */
+  /* overflow-y: hidden; */
+  /* max-width: 240px; */
+  /* border-top: var(--border-line); */
+  /* padding: 1.5rem 1.5rem 0 1.5rem; */
+  /* margin-top: 1.5rem;
+  text-align: center;
+}   */
+
+ /*.pledge-input {
+  /* overflow-y: hidden; */
   /* position: relative; */
   /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: flex-start; */
-  align-items: center;
-  overflow-y: hidden;
-  /* max-width: 240px; */
-  border-top: var(--border-line);
-  /* padding: 1.5rem 1.5rem 0 1.5rem; */
-  margin-top: 1.5rem;
-  /* text-align: center; */
-}
-
-.pledge-input {
-  /* position: relative; */
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1.5rem 0;
+  /* flex-wrap: wrap; */
+  /* max-width: 100%; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* margin-top: 1.5rem; */
 }
 /* 
 .pledge-input div {
@@ -480,14 +482,14 @@ input[type="radio"] {
   margin-right: 1rem;
 } */
 
-.pledge-input input {
-  /* padding: 1.25rem 1.25rem 1.25rem 0; */
+/* .pledge-input input {
+  padding: 1.25rem 1.25rem 1.25rem 0;
   height: 48px;
-  /* width: 100%; */
-  border-radius: 5rem;
+  width: 100px;
+  border-radius: 2rem;
   border: var(--border-line);
   font-size: 0.85rem;
-}
+} */
 
 /* .pledge-input::before {
   position: absolute;
@@ -499,9 +501,13 @@ input[type="radio"] {
   color: var(--light-txt);
 } */
 
-.continue-btn {
+/* .continue-btn {
   background-color: var(--main-btn);
-  padding: 0.1rem 1rem;
+  height: 48px;
+  width: 100px;
+  margin-left: 1rem;
+  padding: 1rem;
   font-size: 0.75rem;
   font-weight: 700;
-}
+  text-align: center;
+}  */
