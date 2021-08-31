@@ -11,7 +11,6 @@ const closePledgeModal = document.getElementById("closePledgeModal");
 const pledgeSelects= document.querySelectorAll(".pledge-select");
 const radioLabel = document.getElementsByClassName("radio-label");
 const radioCircle = document.getElementById("radioCircle");
-const pledgePopOut = document.getElementById("pledgePopOut");
 
 
 // Toggle Mobile Menu
@@ -48,6 +47,8 @@ const selectPledge = (e) => {
         }
         const radio = e.target;
         radio.parentElement.parentElement.classList.toggle('active');
+        const pledgePopOut = document.querySelector('.pledge-select.active .pledge-pop-out');
+        console.log(pledgePopOut);
         pledgePopOut.classList.toggle('active');
     }
     e.stopPropagation;
