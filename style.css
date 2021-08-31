@@ -50,6 +50,10 @@ h5 {
   margin-bottom: 24px;
 }
 
+span {
+  margin: 0 0 1rem 0;
+}
+
 .btn {
   background-color: var(--main-btn);
   border: none;
@@ -449,49 +453,41 @@ input[type="radio"] {
 }
 /* // --------------------------------------------------- */
 
-/* .pledge-pop-out {
-  /* display: none; */
-  /* position: relative;
+.pledge-pop-out {
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
-  /* align-items: center; */
-  /* overflow-y: hidden; */
-  /* max-width: 240px; */
-  /* border-top: var(--border-line); */
-  /* padding: 1.5rem 1.5rem 0 1.5rem; */
-  /* margin-top: 1.5rem;
+  align-items: center;
+  overflow-y: hidden;
+  max-width: 240px;
+  border-top: var(--border-line);
+  margin-top: 1.5rem;
   text-align: center;
-}   */
-
- /*.pledge-input {
-  /* overflow-y: hidden; */
-  /* position: relative; */
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* max-width: 100%; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
-  /* margin-top: 1.5rem; */
+  display: none;
 }
-/* 
-.pledge-input div {
-  position: relative;
-  width: 50%;
-  flex-grow: 1;
-  margin-right: 1rem;
-} */
 
-/* .pledge-input input {
+.pledge-pop-out.active {
+  display: flex;
+}
+
+.pledge-input {
+  /* position: relative; */
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.pledge-input input {
   padding: 1.25rem 1.25rem 1.25rem 0;
   height: 48px;
   width: 100px;
   border-radius: 2rem;
   border: var(--border-line);
   font-size: 0.85rem;
-} */
-
-/* .pledge-input::before {
+}
+/* 
+.pledge-input::before {
   position: absolute;
   top: 21px;
   left: -1.25rem;
@@ -501,13 +497,8 @@ input[type="radio"] {
   color: var(--light-txt);
 } */
 
-/* .continue-btn {
+.continue-btn {
   background-color: var(--main-btn);
-  height: 48px;
-  width: 100px;
+  width: 100%;
   margin-left: 1rem;
-  padding: 1rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-align: center;
-}  */
+}
