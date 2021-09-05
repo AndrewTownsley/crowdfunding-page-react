@@ -37,38 +37,9 @@ const rewardModalToggle = (e) => {
     }
 }
 
-const selectPledge = (e) => {
-    e.preventDefault();
-    const currentPledge = document.querySelector('.pledge-select');
-    const radioLabel = document.querySelector(".radio-label");
-    if(e.target !== e.currentTarget) {
-        console.log(e.target.parentElement.parentElement.parentElement);
-        if(currentPledge) {
-            currentPledge.classList.toggle('active');
-        }
-        // const radio = e.target;
-        radioLabel.parentElement.parentElement.parentElement.classList.toggle('active');
-        const pledgePopOut = document.querySelector('.pledge-select .pledge-pop-out');
-        pledgePopOut.classList.toggle('active');
-    }
-    e.stopPropagation;
+const selectPledge = () => {
+    // Just rewrite the selectPledge function from
 }
-
-// const selectPledge = (e) => {
-//     e.preventDefault();
-//     console.log(e.target.parentElement.parentElement.parentElement);
-//     const activePledge = document.querySelector('.pledge-select .active')
-//     const pledge = document.querySelector('.pledge-select')
-//     if(e.target.parentElement.parentElement === activePledge){
-//         console.log("active-removed");
-//         activePledge.classList.remove('active');
-//     } else if
-//     (e.target.parentElement.parentElement.parentElement === pledge) {
-//         console.log("else if");
-//         pledge.classList.toggle('active');
-// }
-// }
-
 
 radioBtn.forEach(pledge => {
     pledge.addEventListener('click', selectPledge)
@@ -85,6 +56,37 @@ openMobile.addEventListener('click', toggleMobileMenu);
 
 
 
+// const selectPledge = (e) => {
+//     e.preventDefault();
+//     const currentPledge = document.querySelector('.pledge-select');
+//     const radioLabel = document.querySelector(".radio-label");
+//     if(e.target !== e.currentTarget) {
+//         console.log(e.target.parentElement.parentElement.parentElement);
+//         if(currentPledge) {
+//             currentPledge.classList.toggle('active');
+//         }
+//         // const radio = e.target;
+//         radioLabel.parentElement.parentElement.parentElement.classList.toggle('active');
+//         const pledgePopOut = document.querySelector('.pledge-select .pledge-pop-out');
+//         pledgePopOut.classList.toggle('active');
+//     }
+//     e.stopPropagation;
+// }
+
+// // const selectPledge = (e) => {
+// //     e.preventDefault();
+// //     console.log(e.target.parentElement.parentElement.parentElement);
+// //     const activePledge = document.querySelector('.pledge-select .active')
+// //     const pledge = document.querySelector('.pledge-select')
+// //     if(e.target.parentElement.parentElement === activePledge){
+// //         console.log("active-removed");
+// //         activePledge.classList.remove('active');
+// //     } else if
+// //     (e.target.parentElement.parentElement.parentElement === pledge) {
+// //         console.log("else if");
+// //         pledge.classList.toggle('active');
+// // }
+// // }
 
 
 
