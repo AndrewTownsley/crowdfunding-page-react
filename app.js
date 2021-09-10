@@ -7,9 +7,12 @@ const projectBtn = document.getElementById("projectBtn");
 const rewardBtn = document.querySelectorAll(".reward-btn");
 const pledgeModal = document.getElementById("pledgeModal");
 const closePledgeModal = document.getElementById("closePledgeModal");
-const pledgeSelects= document.querySelectorAll(".pledge-select");
+// const pledgeSelects= document.querySelectorAll(".pledge-select");
 const radioCircle = document.getElementById("radioCircle");
-const radioBtn = document.querySelectorAll('.radio-label-btn');
+const pledgeNoReward = document.getElementById('noReward');
+const pledge25 = document.getElementById('25');
+const pledge75 = document.getElementById('75');
+const pledge200 = document.getElementById('200');
 
 
 // Toggle Mobile Menu
@@ -37,15 +40,26 @@ const rewardModalToggle = (e) => {
     }
 }
 
-const selectPledge = () => {
-    // Just rewrite the selectPledge function from
-}
-
-radioBtn.forEach(pledge => {
-    pledge.addEventListener('click', selectPledge)
+pledgeModal.addEventListener('click', (e) => {
+    console.log(e.target.id);
+    const pledgePopOut = document.querySelector('.pledge-select .pledge-pop-out');
+    console.log(pledgePopOut);
+    const pledgeSelect = document.querySelectorAll('.pledge-select .radio-label');
+    const id = e.target.id;
+    if(id === "noReward" || id === "25" || id === "75" || id === "200") {
+        pledgeSelect.forEach((pledge) => {
+            e.target.parentElement.parentElement.classList.toggle('active');
+            e.target.parentElement.parentElement.classList.add('active');
+            pledgePopOut.classList.add('active');
+        })
+    }
 })
 
-pledgeModal.addEventListener('click', selectPledge, false); 
+// radioBtn.forEach(pledge => {
+//     pledge.addEventListener('click', selectPledge)
+// })
+
+// pledgeModal.addEventListener('click', selectPledge, false); 
 closePledgeModal.addEventListener('click', togglePledgeModal);
 projectBtn.addEventListener('click', togglePledgeModal);
 about.addEventListener('click', rewardModalToggle);
@@ -73,20 +87,22 @@ openMobile.addEventListener('click', toggleMobileMenu);
 //     e.stopPropagation;
 // }
 
-// // const selectPledge = (e) => {
-// //     e.preventDefault();
-// //     console.log(e.target.parentElement.parentElement.parentElement);
-// //     const activePledge = document.querySelector('.pledge-select .active')
-// //     const pledge = document.querySelector('.pledge-select')
-// //     if(e.target.parentElement.parentElement === activePledge){
-// //         console.log("active-removed");
-// //         activePledge.classList.remove('active');
-// //     } else if
-// //     (e.target.parentElement.parentElement.parentElement === pledge) {
-// //         console.log("else if");
-// //         pledge.classList.toggle('active');
-// // }
-// // }
+// const selectPledge = (e) => {
+    //     e.preventDefault();
+    //     console.log(e.target.parentElement.parentElement.parentElement);
+    //     const activePledge = document.querySelector('.pledge-select .active')
+    //     const pledge = document.querySelector('.pledge-select')
+    //     if(e.target.parentElement.parentElement === activePledge){
+    //         console.log("active-removed");
+    //         activePledge.classList.remove('active');
+    //     } else if
+    //     (e.target.parentElement.parentElement.parentElement === pledge) {
+    //         console.log("else if");
+    //         pledge.classList.toggle('active');
+    // }
+    // }
+
+
 
 
 

@@ -400,6 +400,7 @@ span {
 
 .pledge-select.active {
   border: 1px solid var(--main-btn);
+  border: 10px solid blue;
 }
 
 .pledge-select.active .details {
@@ -410,13 +411,6 @@ span {
   display: flex;
 }
 /* ----------------------------------RADIO-CIRCLE  */
-
-.radio-label-btn {
-  background-color: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
 
 input[type="radio"] {
   display: none;
