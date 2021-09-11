@@ -40,20 +40,33 @@ const rewardModalToggle = (e) => {
     }
 }
 
-pledgeModal.addEventListener('click', (e) => {
-    console.log(e.target.id);
+// const clearPledges = () => {
+//     const pledges = document.querySelectorAll('.pledge-select');
+//     const currentPledge = e.target.parentElement.parentElement;
+//     pledges.classList.add('active');
+
+// }
+
+pledgeModal.addEventListener('click', (e) => { 
     const pledgePopOut = document.querySelector('.pledge-select .pledge-pop-out');
-    console.log(pledgePopOut);
     const pledgeSelect = document.querySelectorAll('.pledge-select .radio-label');
+    const pledges = document.querySelectorAll('.pledge-select');
+    // pledges.classList.contains('active') ? pledges.classList.remove('active') : null;
+    const currentPledge = e.target.parentElement.parentElement;
+    
     const id = e.target.id;
     if(id === "noReward" || id === "25" || id === "75" || id === "200") {
         pledgeSelect.forEach((pledge) => {
-            e.target.parentElement.parentElement.classList.toggle('active');
+            if(pledge.parentElement.classList.contains('active')) {
+                pledge.parentElement.classList.remove('active');
+            } else 
             e.target.parentElement.parentElement.classList.add('active');
             pledgePopOut.classList.add('active');
+            // Figure out how to select the pledgePopOut of ONLY the current pledge and activate that popout.
         })
-    }
+}
 })
+
 
 // radioBtn.forEach(pledge => {
 //     pledge.addEventListener('click', selectPledge)
