@@ -453,7 +453,7 @@ input[type="radio"] {
   transform: scale(1);
 }
 
-.pledge-btn {
+/* .pledge-btn {
   border: none;
   margin: 1rem;
   padding: 1rem;
@@ -468,7 +468,7 @@ input[type="radio"] {
 .pledge-btn:hover {
   background-color: rgb(115, 255, 201);
   color: #333;
-}
+} */
 /* // --------------------------------------------------- */
 
 .pledge-pop-out {
