@@ -224,7 +224,7 @@ span {
   background-color: var(--main-bg);
 }
 
-.progress-fill {
+.progress--bar-fill {
   width: 80%;
   height: 100%;
   border-radius: 20px;
@@ -411,7 +411,7 @@ span {
 }
 /* ----------------------------------RADIO-CIRCLE  */
 
-input[type="radio"] {
+/* input[type="radio"] {
   display: none;
 }
 
@@ -451,7 +451,7 @@ input[type="radio"] {
 
 .pledge-select.active .radio-circle::after {
   transform: scale(1);
-}
+} */
 
 /* .pledge-btn {
   border: none;
