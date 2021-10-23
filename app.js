@@ -7,12 +7,79 @@ const projectBtn = document.getElementById("projectBtn");
 const rewardBtn = document.querySelectorAll(".reward-btn");
 const pledgeModal = document.getElementById("pledgeModal");
 const closePledgeModal = document.getElementById("closePledgeModal");
-// const pledgeSelects= document.querySelectorAll(".pledge-select");
 const radioCircle = document.getElementById("radioCircle");
 const pledgeNoReward = document.getElementById('noReward');
 const pledge25 = document.getElementById('25');
 const pledge75 = document.getElementById('75');
 const pledge200 = document.getElementById('200');
+
+//==============================================================================
+
+const progressFill = document.getElementById('progress-fill');
+const btnContainer = document.querySelector('.btn-container');
+const body = document.querySelector('body');
+const goalContainer = document.querySelector('.goal-container');
+const pledgeBtns = document.querySelectorAll('.btn-container .pledge-btn');
+let newWidth = Number(localStorage.getItem('newWidthStored'))
+const optionBtns = document.querySelectorAll('.button-options .option-btn');
+progressFill.style.width = newWidth + "px"; 
+
+let pledgeTotal = 0;
+let backersCount = 345;
+let pledgeCounter = parseInt(0);
+let pledgeCountValue = Number(localStorage.getItem('pledgeValue'));
+pledgeCount.innerText = `${pledgeCountValue} of`;
+
+
+const updatePledgeTotal = (e) => {
+    const activePledge = document.querySelector('.custom-pledge-form.active')
+    if(e.target.nextSibling.nextSibling === activePledge){
+            activePledge.classList.toggle('active');
+        } else {
+        
+                e.target.nextSibling.nextSibling.classList.toggle('active');
+                // customPledgeForm.classList.toggle('active');
+                // ---------------------progress bar 
+                const progressFill = document.getElementById('progress-fill');
+                let pledgeValue = parseInt(e.target.dataset.value);
+                progressFill.style.width = parseInt(pledgeTotal);
+                let newWidth = pledgeTotal += pledgeValue;
+                progressFill.style.width = newWidth + "px";   
+                localStorage.setItem('newWidthStored', newWidth)
+                //-------------pledge count & backer count -----------------------
+                let backersCountDisplay = document.getElementById('backersCount');
+                backersCount++;
+                backersCountDisplay.innerText = backersCount; 
+                const pledgeCount = document.getElementById('pledgeCount');
+                let pledgeBtnValue =  parseInt(e.target.dataset.value)
+                let pledgeCountValue = pledgeCounter += pledgeBtnValue; 
+                pledgeCount.innerText = `${pledgeCountValue} of`;
+                localStorage.setItem("pledgeValue", pledgeCountValue);
+                console.log(pledgeCountValue);
+                if(pledgeCountValue >= 500) {
+                        btnContainer.classList.add('disabled');
+                        goalContainer.classList.add('complete');
+                    }
+                    }
+                }
+            
+            const optionClear = () => {
+                    const option = document.querySelector('.button-options');
+                    console.log(option);
+                    if(option.classList.contains('selected')) {
+                            e.target.classList.remove('active')
+                            e.target.parentElement.parentElement.classList.remove('selected');
+                        } else {
+                                null
+                            }
+                        }
+
+                                                 
+        pledgeBtns.forEach(pledge => {
+            pledge.addEventListener('mousedown', updatePledgeTotal)
+                })
+
+//==============================================================================
 
 
 // Toggle Mobile Menu
@@ -40,39 +107,9 @@ const rewardModalToggle = (e) => {
     }
 }
 
-// const clearPledges = () => {
-//     const pledges = document.querySelectorAll('.pledge-select');
-//     const currentPledge = e.target.parentElement.parentElement;
-//     pledges.classList.add('active');
-
-// }
-
-pledgeModal.addEventListener('click', (e) => { 
-    const pledgePopOut = document.querySelector('.pledge-select .pledge-pop-out');
-    const pledgeSelect = document.querySelectorAll('.pledge-select .radio-label');
-    const pledges = document.querySelectorAll('.pledge-select');
-    // pledges.classList.contains('active') ? pledges.classList.remove('active') : null;
-    const currentPledge = e.target.parentElement.parentElement;
-    
-    const id = e.target.id;
-    if(id === "noReward" || id === "25" || id === "75" || id === "200") {
-        pledgeSelect.forEach((pledge) => {
-            if(pledge.parentElement.classList.contains('active')) {
-                pledge.parentElement.classList.remove('active');
-            } else 
-            e.target.parentElement.parentElement.classList.add('active');
-            pledgePopOut.classList.add('active');
-            // Figure out how to select the pledgePopOut of ONLY the current pledge and activate that popout.
-        })
-}
-})
 
 
-// radioBtn.forEach(pledge => {
-//     pledge.addEventListener('click', selectPledge)
-// })
 
-// pledgeModal.addEventListener('click', selectPledge, false); 
 closePledgeModal.addEventListener('click', togglePledgeModal);
 projectBtn.addEventListener('click', togglePledgeModal);
 about.addEventListener('click', rewardModalToggle);
@@ -82,50 +119,3 @@ openMobile.addEventListener('click', toggleMobileMenu);
 
 
 
-
-// const selectPledge = (e) => {
-//     e.preventDefault();
-//     const currentPledge = document.querySelector('.pledge-select');
-//     const radioLabel = document.querySelector(".radio-label");
-//     if(e.target !== e.currentTarget) {
-//         console.log(e.target.parentElement.parentElement.parentElement);
-//         if(currentPledge) {
-//             currentPledge.classList.toggle('active');
-//         }
-//         // const radio = e.target;
-//         radioLabel.parentElement.parentElement.parentElement.classList.toggle('active');
-//         const pledgePopOut = document.querySelector('.pledge-select .pledge-pop-out');
-//         pledgePopOut.classList.toggle('active');
-//     }
-//     e.stopPropagation;
-// }
-
-// const selectPledge = (e) => {
-    //     e.preventDefault();
-    //     console.log(e.target.parentElement.parentElement.parentElement);
-    //     const activePledge = document.querySelector('.pledge-select .active')
-    //     const pledge = document.querySelector('.pledge-select')
-    //     if(e.target.parentElement.parentElement === activePledge){
-    //         console.log("active-removed");
-    //         activePledge.classList.remove('active');
-    //     } else if
-    //     (e.target.parentElement.parentElement.parentElement === pledge) {
-    //         console.log("else if");
-    //         pledge.classList.toggle('active');
-    // }
-    // }
-
-
-
-
-
-
-
-
-
-
-
-   // If e.target == radio btn {
-        // pledgePopOut active
-    //     const radioEl = document.querySelectorAll('.radio-label')
-    // if (e.target == radioEl) {
