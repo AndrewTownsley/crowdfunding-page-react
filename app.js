@@ -7,11 +7,6 @@ const projectBtn = document.getElementById("projectBtn");
 const rewardBtn = document.querySelectorAll(".reward-btn");
 const pledgeModal = document.getElementById("pledgeModal");
 const closePledgeModal = document.getElementById("closePledgeModal");
-const radioCircle = document.getElementById("radioCircle");
-const pledgeNoReward = document.getElementById('noReward');
-const pledge25 = document.getElementById('25');
-const pledge75 = document.getElementById('75');
-const pledge200 = document.getElementById('200');
 
 //==============================================================================
 
@@ -25,11 +20,21 @@ const pledgeCount = document.getElementById('pledgeCount');
 let newWidth = Number(localStorage.getItem('newWidthStored'))
 progressFill.style.width = newWidth + "px"; 
 
+pledgeCount.innerText = 89914;
 let pledgeTotal = 89914;
 let backersCount = 5007;
-let pledgeCounter = parseInt(0);
+let pledgeCounter = parseInt(89914);
 let pledgeCountValue = Number(localStorage.getItem('pledgeValue'));
-pledgeCount.innerText = `${pledgeCountValue} of`;
+const pledgeCountDisplay = () => {
+    console.log('display func called');
+    if (pledgeCountValue > 89914) {
+        return pledgeCount.innerText = `${pledgeCountValue} of`;
+    } else {
+        pledgeCount.innerText = 89914;
+    }
+}
+pledgeCountDisplay();
+    
 
 
 const updatePledgeTotal = (e) => {
@@ -52,6 +57,7 @@ const updatePledgeTotal = (e) => {
                 let backersCountDisplay = document.getElementById('backersCount');
                 backersCount++;
                 backersCountDisplay.innerText = backersCount; 
+                console.log(backersCount);
                 const pledgeCount = document.getElementById('pledgeCount');
                 let pledgeBtnValue =  parseInt(e.target.dataset.value)
                 let pledgeCountValue = pledgeCounter += pledgeBtnValue; 
