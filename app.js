@@ -7,6 +7,8 @@ const projectBtn = document.getElementById("projectBtn");
 const rewardBtn = document.querySelectorAll(".reward-btn");
 const pledgeModal = document.getElementById("pledgeModal");
 const closePledgeModal = document.getElementById("closePledgeModal");
+const thankModal = document.getElementById("thankModal");
+const thankBtn = document.getElementById("thankBtn");
 
 //==============================================================================
 
@@ -17,10 +19,21 @@ const fundDataContainer = document.getElementById('.fund-data');
 const pledgeBtns = document.querySelectorAll('.pledge-select .pledge-btn');
 console.log(pledgeBtns);
 const pledgeCount = document.getElementById('pledgeCount');
-let newWidth = Number(localStorage.getItem('newWidthStored'))
-progressFill.style.width = newWidth + "px"; 
 
-pledgeCount.innerText = 89914;
+// const progressFillDisplay = () => {
+//     console.log('progress fun called');
+//     if(newWidth > 89) {
+//         let newWidth = Number(localStorage.getItem('newWidthStored'))
+//     } else {
+//         let newWidth = 89;
+//     }
+//     progressFill.style.width = newWidth + "px"; 
+// }
+
+
+let newWidth = Number(localStorage.getItem('newWidthStored'))
+
+// pledgeCount.innerText = 89914;
 let pledgeTotal = 89914;
 let backersCount = 5007;
 let pledgeCounter = parseInt(89914);
@@ -43,31 +56,38 @@ const updatePledgeTotal = (e) => {
     //         activePledge.classList.toggle('active');
     //     } else {
         e.preventDefault();
-                console.log('Update Pledge Called');
                 e.target.nextSibling.nextSibling.classList.toggle('active');
                 // customPledgeForm.classList.toggle('active');
                 // ---------------------progress bar 
+
+
+
+
+                // Divide both the 100,000 and 89914 by 1000 to get values of 100(%) and the percentage of that number that 89914 is.  
                 const progressFill = document.getElementById('progress-fill');
                 let pledgeValue = parseInt(e.target.dataset.value);
                 progressFill.style.width = parseInt(pledgeTotal);
                 let newWidth = pledgeTotal += pledgeValue;
+                console.log(`pledgeTotal = ${pledgeTotal}`);
+                console.log(`pledgeValue = ${pledgeValue}`);
+                console.log(newWidth);
                 progressFill.style.width = newWidth + "px";   
                 localStorage.setItem('newWidthStored', newWidth)
                 //-------------pledge count & backer count -----------------------
                 let backersCountDisplay = document.getElementById('backersCount');
                 backersCount++;
                 backersCountDisplay.innerText = backersCount; 
-                console.log(backersCount);
                 const pledgeCount = document.getElementById('pledgeCount');
                 let pledgeBtnValue =  parseInt(e.target.dataset.value)
                 let pledgeCountValue = pledgeCounter += pledgeBtnValue; 
                 pledgeCount.innerText = `${pledgeCountValue} of`;
                 localStorage.setItem("pledgeValue", pledgeCountValue);
-                console.log(pledgeCountValue);
                 // if(pledgeCountValue >= 500) {
                 //         btnContainer.classList.add('disabled');
                 //         fundDataContainer.classList.add('complete');
                 //     }
+                togglePledgeModal();
+                toggleThankModal();
                     }
                 // }
             
@@ -115,6 +135,9 @@ const rewardModalToggle = (e) => {
     }
 }
 
+const toggleThankModal = () => {
+    thankModal.classList.toggle('active');
+}
 
 
 
@@ -124,6 +147,7 @@ about.addEventListener('click', rewardModalToggle);
 overlay.addEventListener('click', togglePledgeModal);
 closeMobile.addEventListener('click', toggleMobileMenu);
 openMobile.addEventListener('click', toggleMobileMenu);
+thankBtn.addEventListener('click', toggleThankModal)
 
 
 
