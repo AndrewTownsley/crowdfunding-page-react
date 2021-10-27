@@ -77,7 +77,6 @@ span {
 
 .main-header {
   background-image: url("images/image-hero-mobile.jpg");
-  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   height: 300px;
@@ -228,7 +227,7 @@ span {
   background-color: var(--main-bg);
 }
 
-.progress--bar-fill {
+.progress-bar-fill {
   width: 80%;
   height: 100%;
   border-radius: 20px;
