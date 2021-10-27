@@ -19,6 +19,9 @@ const body = document.querySelector('body');
 const fundDataContainer = document.getElementById('.fund-data');
 const pledgeBtns = document.querySelectorAll('.pledge-select .pledge-btn');
 const pledgeCount = document.getElementById('pledgeCount');
+let newWidth = Number(localStorage.getItem('newWidthStored'))
+progressFill.style.width = newWidth + "px";   
+
 
 let pledgeTotal = 89914;
 let backersCount = 5007;
@@ -32,25 +35,16 @@ const pledgeCountDisplay = () => {
     }
 }
 pledgeCountDisplay();
-
-// const progressFillDisplay = () => {
-//     if(newWidth > 89) {
-        let newWidth = Number(localStorage.getItem('newWidthStored'))
-        //     } else {
-            //         let newWidth = 89;
-            //     }
-            //     progressFill.style.width = newWidth + "px"; 
-            // }
-
-const updatePledgeTotal = (e) => {
-
-        e.preventDefault();
-                e.target.nextSibling.nextSibling.classList.toggle('active');
+        
+        const updatePledgeTotal = (e) => {
             
-                // Divide both the 100,000 and 89914 by 1000 to get values of 100(%) and the percentage of that number that 89914 is.  
-                const progressFill = document.getElementById('progress-fill');
-                let pledgeValue = parseInt(e.target.dataset.value);
-                progressFill.style.width = parseInt(pledgeTotal);
+            e.preventDefault();
+            e.target.nextSibling.nextSibling.classList.toggle('active');
+            
+            // Divide both the 100,000 and 89914 by 1000 to get values of 100(%) and the percentage of that number that 89914 is.  
+            const progressFill = document.getElementById('progress-fill');
+            let pledgeValue = parseInt(e.target.dataset.value);
+            progressFill.style.width = parseInt(pledgeTotal);
                 let newWidth = ((pledgeTotal += pledgeValue) / 10000);
                 console.log(`pledgeTotal = ${pledgeTotal}`);
                 console.log(`pledgeValue = ${pledgeValue}`);
