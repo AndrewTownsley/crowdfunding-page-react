@@ -9,7 +9,8 @@ const pledgeModal = document.getElementById("pledgeModal");
 const closePledgeModal = document.getElementById("closePledgeModal");
 const thankModal = document.getElementById("thankModal");
 const thankBtn = document.getElementById("thankBtn");
-
+const bookmarkBtn = document.querySelector(".bookmark-btn");
+const bookmarkIcon = document.getElementById('bookmark');
 //==============================================================================
 
 const progressFill = document.getElementById('progress-fill');
@@ -82,10 +83,6 @@ const updatePledgeTotal = (e) => {
                 let pledgeCountValue = pledgeCounter += pledgeBtnValue; 
                 pledgeCount.innerText = `${pledgeCountValue} of`;
                 localStorage.setItem("pledgeValue", pledgeCountValue);
-                // if(pledgeCountValue >= 500) {
-                //         btnContainer.classList.add('disabled');
-                //         fundDataContainer.classList.add('complete');
-                //     }
                 togglePledgeModal();
                 toggleThankModal();
                     }
@@ -139,6 +136,11 @@ const toggleThankModal = () => {
     thankModal.classList.toggle('active');
 }
 
+const toggleBookMark = () => {
+    bookmarkIcon.classList.toggle('active');
+    console.log('bookmark');
+}
+
 
 
 closePledgeModal.addEventListener('click', togglePledgeModal);
@@ -148,6 +150,7 @@ overlay.addEventListener('click', togglePledgeModal);
 closeMobile.addEventListener('click', toggleMobileMenu);
 openMobile.addEventListener('click', toggleMobileMenu);
 thankBtn.addEventListener('click', toggleThankModal)
+bookmarkBtn.addEventListener('click', toggleBookMark)
 
 
 

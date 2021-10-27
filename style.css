@@ -190,6 +190,10 @@ span {
   cursor: pointer;
 }
 
+#bookmark.active {
+  fill: hsl(176, 72%, 28%);
+}
+
 /* --------------------------------------FUND DATA  */
 
 .fund-data {
@@ -286,12 +290,14 @@ span {
   opacity: 0;
   margin: 0 24px;
   position: fixed;
+  left: 1%;
   overflow-y: scroll;
   top: 18vh;
   height: 80vh;
   pointer-events: none;
   transition: all 0.5s ease;
   z-index: 3;
+  padding: 0;
 }
 
 .pledge-modal.active {
@@ -311,6 +317,7 @@ span {
   z-index: 3;
   margin: 0 24px;
   transition: all 0.5s ease;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
 }
 
 .thank-modal h3 {
@@ -391,18 +398,28 @@ span {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 24px;
+  padding: 24px;
+  margin: 0 24px 0 24px;
 }
 
 .pledge-modal header h3 {
   padding-bottom: 0;
 }
 
+.header-p {
+  padding: 24px;
+}
+
 .pledge-select {
   border: var(--border-line);
   border-radius: var(--border-rad);
   margin: 24px 0;
+  margin: 24px;
   padding: 24px;
+}
+
+.pledge-select .details {
+  margin-top: 1rem;
 }
 
 .pledge-select.active {
@@ -419,7 +436,7 @@ span {
 
 .continue-btn {
   background-color: var(--main-btn);
-  width: 100%;
+  width: 100px;
   margin-left: 1rem;
 }
 
