@@ -86,7 +86,7 @@ pledgeCountDisplay();
 // Toggle Mobile Menu
 const toggleMobileMenu = () => {
     mobileNav.classList.toggle('active');
-    overlay.classList.toggle('active');
+    // overlay.classList.toggle('active');
     openMobile.classList.toggle('inActive');
     closeMobile.classList.toggle('active')
 }
