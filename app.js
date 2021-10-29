@@ -10,7 +10,8 @@ const closePledgeModal = document.getElementById("closePledgeModal");
 const thankModal = document.getElementById("thankModal");
 const thankBtn = document.getElementById("thankBtn");
 const bookmarkBtn = document.querySelector(".bookmark-btn");
-const bookmarkIcon = document.getElementById('bookmark');
+const bookmarkIcon = document.getElementById("bookmark");
+const bookmarkText = document.getElementById("bookmarkP");
 //==============================================================================
 
 const progressFill = document.getElementById('progress-fill');
@@ -114,6 +115,13 @@ const toggleThankModal = () => {
 
 const toggleBookMark = () => {
     bookmarkIcon.classList.toggle('active');
+    if(bookmarkIcon.classList.contains('active')) {
+        bookmarkText.innerText = 'Bookmarked'
+        bookmarkText.style.marginLeft = '10px';
+    } else {
+        bookmarkText.innerText = 'Bookmark'
+        bookmarkText.style.marginLeft = '20px';
+    };
 }
 
 

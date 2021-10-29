@@ -31,7 +31,7 @@ a {
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   color: var(--light-txt);
 }
@@ -70,6 +70,7 @@ span {
   font-size: 0.75rem;
   padding: 0.75rem 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .card {
@@ -86,7 +87,7 @@ span {
   background-image: url("images/image-hero-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 300px;
+  height: 400px;
   width: 100%;
 }
 
@@ -183,6 +184,8 @@ span {
 .product-hero {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   margin: -3rem 24px;
   padding: 0;
@@ -195,23 +198,27 @@ span {
   margin-top: 3.25rem;
 }
 
-.product-hero-text p {
-  margin: 2rem 0;
+.product-hero-text h1 {
+  margin: 0 1.5rem;
 }
+.product-hero-text p {
+  margin: 2rem 24px;
+}
+
 .hero-logo {
   position: absolute;
-  left: 40%;
   top: -10%;
 }
 
 .product-hero-btns {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-bottom: 2rem;
 }
 
 .project-btn {
-  padding: 1rem 2rem;
+  padding: 1rem;
+  margin-right: 1rem;
   font-size: 0.75rem;
   font-weight: 700;
   background-color: var(--main-btn);
@@ -224,10 +231,50 @@ span {
   cursor: pointer;
 }
 
+.bookmark-btn p {
+  display: none;
+}
+
 #bookmark.active {
   fill: hsl(176, 72%, 28%);
 }
 
+@media (min-width: 450px) {
+  .product-hero-btns {
+    display: flex;
+    width: 65%;
+    max-width: 450px;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 650px) {
+  .product-hero {
+    max-width: 700px;
+    margin: -5rem auto 1.5rem auto;
+  }
+
+  .project-btn {
+    margin-right: 0;
+  }
+
+  .bookmark-btn {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    width: 185px;
+    background-color: var(--main-bg);
+  }
+
+  .bookmark-btn p {
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 20px;
+    display: block;
+    transition: all 0.3s ease;
+  }
+}
 /* --------------------------------------FUND DATA  */
 
 .fund-data {
@@ -269,6 +316,13 @@ span {
   background-color: var(--main-btn);
 }
 
+@media (min-width: 650px) {
+  .fund-data {
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+  }
+}
+
 /* ---------------------------------------ABOUT */
 .about {
   display: flex;
@@ -301,6 +355,16 @@ span {
   font-weight: 700;
 }
 
+.reward-btn:hover {
+  background-color: var(--btn-hover);
+}
+
+@media (min-width: 650px) {
+  .about {
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+  }
+}
 /* ------------------------------------  Overlay / Modal */
 
 .overlay {
@@ -323,6 +387,7 @@ span {
 .pledge-modal {
   opacity: 0;
   margin: 0 24px;
+  max-width: 90%;
   position: fixed;
   left: 1%;
   overflow-y: scroll;
@@ -370,6 +435,16 @@ span {
 .thank-modal.active {
   opacity: 1;
   pointer-events: all;
+}
+
+@media (min-width: 650px) {
+}
+
+@media (min-width: 750px) {
+  .pledge-modal {
+    max-width: 700px;
+    left: calc(50% - 375px);
+  }
 }
 
 /* ----------------------------------MOBILE NAV  */
