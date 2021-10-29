@@ -73,6 +73,10 @@ span {
   transition: all 0.3s ease;
 }
 
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -229,6 +233,7 @@ span {
   outline: none;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .bookmark-btn p {
@@ -236,6 +241,7 @@ span {
 }
 
 #bookmark.active {
+  transition: all 0.3s ease-in-out;
   fill: hsl(176, 72%, 28%);
 }
 
@@ -264,6 +270,7 @@ span {
     align-items: center;
     border-radius: 50px;
     width: 185px;
+    transition: all 0.3s ease-in-out;
     background-color: var(--main-bg);
   }
 
@@ -272,7 +279,7 @@ span {
     font-size: 16px;
     margin-left: 20px;
     display: block;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
   }
 }
 /* --------------------------------------FUND DATA  */
@@ -314,6 +321,7 @@ span {
   height: 100%;
   border-radius: 20px;
   background-color: var(--main-btn);
+  max-width: 100%;
 }
 
 @media (min-width: 650px) {
@@ -353,10 +361,6 @@ span {
   width: 150px;
   font-size: 14px;
   font-weight: 700;
-}
-
-.reward-btn:hover {
-  background-color: var(--btn-hover);
 }
 
 @media (min-width: 650px) {
@@ -544,10 +548,12 @@ span {
   display: flex;
 }
 
-.continue-btn {
-  background-color: var(--main-btn);
-  width: 100px;
-  margin-left: 1rem;
+.closePledgeBtn {
+  cursor: pointer;
+}
+
+.closePledgeBtn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* .pledge-pop-out {

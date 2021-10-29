@@ -22,7 +22,7 @@ const pledgeBtns = document.querySelectorAll('.pledge-select .pledge-btn');
 const pledgeCount = document.getElementById('pledgeCount');
 let newWidth = Number(localStorage.getItem('newWidthStored'))
 progressFill.style.width = newWidth + "px";   
-
+// Add the percentage of the total pixel width that the 89924 represents to the original newWidth fill value.
 
 let pledgeTotal = 89914;
 let backersCount = 5007;
@@ -40,13 +40,11 @@ pledgeCountDisplay();
         const updatePledgeTotal = (e) => {
             
             e.preventDefault();
-            e.target.nextSibling.nextSibling.classList.toggle('active');
-            
-            // Divide both the 100,000 and 89914 by 1000 to get values of 100(%) and the percentage of that number that 89914 is.  
+        
             const progressFill = document.getElementById('progress-fill');
             let pledgeValue = parseInt(e.target.dataset.value);
             progressFill.style.width = parseInt(pledgeTotal);
-                let newWidth = ((pledgeTotal += pledgeValue) / 10000);
+                let newWidth = ((pledgeTotal += pledgeValue) / 1000);
                 console.log(`pledgeTotal = ${pledgeTotal}`);
                 console.log(`pledgeValue = ${pledgeValue}`);
                 console.log("newWidth: ",newWidth);
