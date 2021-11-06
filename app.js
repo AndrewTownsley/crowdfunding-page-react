@@ -22,12 +22,11 @@ const pledgeBtns = document.querySelectorAll('.pledge-select .pledge-btn');
 const pledgeCount = document.getElementById('pledgeCount');
 let newWidth = Number(localStorage.getItem('newWidthStored'))
 progressFill.style.width = newWidth + "px";   
-// Add the percentage of the total pixel width that the 89924 represents to the original newWidth fill value.
-
 let pledgeTotal = 89914;
 let backersCount = 5007;
 let pledgeCounter = parseInt(89914);
 let pledgeCountValue = Number(localStorage.getItem('pledgeValue'));
+
 const pledgeCountDisplay = () => {
     if (pledgeCountValue > 89914) {
         return pledgeCount.innerText = `${pledgeCountValue} of`;
@@ -42,23 +41,20 @@ pledgeCountDisplay();
             e.preventDefault();
         
             const progressFill = document.getElementById('progress-fill');
-            let pledgeValue = parseInt(e.target.dataset.value);
-            progressFill.style.width = parseInt(pledgeTotal);
+                let pledgeValue = parseInt(e.target.dataset.value);
+                progressFill.style.width = parseInt(pledgeTotal);
                 let newWidth = ((pledgeTotal += pledgeValue) / 1000);
-                console.log(`pledgeTotal = ${pledgeTotal}`);
-                console.log(`pledgeValue = ${pledgeValue}`);
-                console.log("newWidth: ",newWidth);
                 progressFill.style.width = newWidth + "px";   
                 localStorage.setItem('newWidthStored', newWidth)
                 //-------------pledge count & backer count -----------------------
-                let backersCountDisplay = document.getElementById('backersCount');
-                backersCount++;
-                backersCountDisplay.innerText = backersCount; 
-                const pledgeCount = document.getElementById('pledgeCount');
-                let pledgeBtnValue =  parseInt(e.target.dataset.value)
-                let pledgeCountValue = pledgeCounter += pledgeBtnValue; 
-                pledgeCount.innerText = `${pledgeCountValue} of`;
-                localStorage.setItem("pledgeValue", pledgeCountValue);
+                    let backersCountDisplay = document.getElementById('backersCount');
+                    backersCount++;
+                    backersCountDisplay.innerText = backersCount; 
+                    const pledgeCount = document.getElementById('pledgeCount');
+                    let pledgeBtnValue =  parseInt(e.target.dataset.value)
+                    let pledgeCountValue = pledgeCounter += pledgeBtnValue; 
+                    pledgeCount.innerText = `${pledgeCountValue} of`;
+                    localStorage.setItem("pledgeValue", pledgeCountValue);
                 togglePledgeModal();
                 toggleThankModal();
                     }
