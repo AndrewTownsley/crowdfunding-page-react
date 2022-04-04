@@ -13,7 +13,7 @@ html {
   --main-btn: hsl(176, 50%, 47%);
   --btn-hover: hsl(176, 72%, 28%);
   --black-txt: hsl(0, 0%, 0%);
-  --light-txt: hsl(0, 0%, 48%);
+  --light-txt: #555;
   --border-light: hsl(0, 0%, 92%);
   --border-rad: 8px;
   --border-line: 1px solid var(--border-light);
